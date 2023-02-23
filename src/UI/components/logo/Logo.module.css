@@ -1,0 +1,9 @@
+@font-face {
+    src: url("../../../fonts/TiltPrism.ttf");
+    font-family: TiltPrism;
+}
+
+.logo {
+    font-family: TiltPrism, sans-serif;
+    user-select: none;
+}

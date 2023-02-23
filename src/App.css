@@ -1,0 +1,8 @@
+@font-face {
+    src: url("./fonts/Margot_Xtrafette.ttf");
+    font-family: "Margot Xtrafette";
+}
+
+.app {
+    font-family: "Margot Xtrafette", sans-serif;
+}

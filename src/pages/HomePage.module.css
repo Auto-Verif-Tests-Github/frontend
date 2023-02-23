@@ -1,0 +1,30 @@
+.home_page {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 7vw;
+}
+
+.btn {
+    margin: 1vw 0;
+}
+
+.teacher {
+    text-decoration: none;
+    margin-top: 1vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        font-size: 15vw;
+    }
+
+    .btn {
+        margin: 5vw 0;
+    }
+}
