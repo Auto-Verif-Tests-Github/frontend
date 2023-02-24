@@ -15,7 +15,7 @@ function App() {
                         <Route path="" element={<HomePage />} />
                         <Route path="login" element={<LoginPage />} />
                         <Route path="streams" element={<StreamsPage />} />
-                        <Route path="courses" element={<CoursesPage />} />
+                        <Route path="courses/:stream_id" element={<CoursesPage />} />
                         <Route path="*" element={<Navigate to="/" replace />} />
                     </Route>
                 </Routes>
