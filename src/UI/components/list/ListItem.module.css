@@ -1,0 +1,37 @@
+.item {
+    border: .15vw solid #CCE6DD;
+    font-size: 1vw;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.header {
+    display: inline-block;
+    background: #CCE6DD;
+    color: #316267;
+    width: 4vw;
+    user-select: none;
+}
+
+.value {
+    display: inline-block;
+    color: #528CA7;
+}
+
+.headval {
+    padding: 1vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .item {
+        border: .25vw solid #CCE6DD;
+    }
+
+    .header {
+        width: 8vw;
+    }
+
+    .headval {
+        font-size: 3vw;
+    }
+}
