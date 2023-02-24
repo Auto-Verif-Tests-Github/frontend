@@ -1,0 +1,86 @@
+.login_page {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 4vw;
+}
+
+.form {
+    position: relative;
+    background: rgb(213, 213, 213);
+    margin: 2vw;
+    padding: 1vw;
+    width: 22vw;
+    border-radius: .4vw;
+}
+
+.next_btn {
+    position: absolute;
+    right: 0;
+    top: calc(50% - 2vw);
+    height: 4vw;
+    width: 4vw;
+    background: rgb(213, 213, 213);
+    border-radius: 50%;
+    border: .5vw solid white;
+    box-sizing: border-box;
+    transform: translateX(2vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.next_btn:hover {
+    background: rgb(238, 238, 238);
+    transition: .4s;
+}
+
+.form input {
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1vw;
+    font-weight: bold;
+    padding: 1vw 1vw 1vw 0;
+}
+
+.line {
+    background: rgba(0, 0, 0, 0.6);
+    height: .12vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        font-size: 10vw;
+    }
+
+    .form {
+        margin: 3vw;
+        padding: 1.5vw;
+        width: 40vw;
+    }
+
+    .next_btn {
+        top: calc(50% - 3vw);
+        height: 6vw;
+        width: 6vw;
+        transform: translateX(3vw);
+    }
+
+    .next_btn img {
+        width: 12px;
+        height: 12px;
+    }
+
+    .form input {
+        font-size: 2vw;
+        font-weight: bold;
+        padding: 1.5vw 1.5vw 1.5vw 0;
+    }
+}
