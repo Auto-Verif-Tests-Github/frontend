@@ -11,7 +11,7 @@ const HomePage = () => {
     return (
         <div className={cs.home_page}>
             <Logo className={cs.logo} />
-            <TwitterButton onClick={() => navigate("/courses")} buttonStyle={cs.btn} imgSrc={education} value="Перейти к выбору потока" />
+            <TwitterButton onClick={() => navigate("/streams")} buttonStyle={cs.btn} imgSrc={education} value="Перейти к выбору потока" />
             <Link className={cs.teacher} to="/login">Я преподаватель!</Link>
         </div>
     );

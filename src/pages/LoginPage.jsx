@@ -8,7 +8,7 @@ const LoginPage = () => {
     const navigate = useNavigate();
 
     function btnClick() {
-        navigate("/courses");
+        navigate("/streams");
     }
 
     return (
