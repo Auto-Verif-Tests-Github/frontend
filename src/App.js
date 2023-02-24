@@ -3,6 +3,7 @@ import React from "react";
 import HomePage from "./pages/HomePage";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
+import CoursesPage from "./pages/CoursesPage";
 
 function App() {
     return (
@@ -11,7 +12,8 @@ function App() {
                 <Routes>
                     <Route path="/">
                         <Route path="" element={<HomePage />} />
-                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="login" element={<LoginPage />} />
+                        <Route path="courses" element={<CoursesPage />} />
                         <Route path="*" element={<Navigate to="/" replace />} />
                     </Route>
                 </Routes>
