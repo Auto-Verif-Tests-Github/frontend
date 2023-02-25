@@ -1,3 +1,7 @@
-.streams {
+.streams_default {
     margin: 0 1vw;
+}
+
+.streams {
+    margin: 5.5svw 1vw 0 1vw;
 }
