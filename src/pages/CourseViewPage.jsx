@@ -1,5 +1,4 @@
 import React from "react";
-import cs from "./CourseViewPage.module.css";
 import {useParams} from "react-router-dom";
 import CourseTable from "../UI/components/table/CourseTable";
 import LineTable from "../UI/components/table/LineTable";
