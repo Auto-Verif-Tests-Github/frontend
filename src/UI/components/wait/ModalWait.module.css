@@ -1,0 +1,55 @@
+@keyframes wait-spin {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wait-popup {
+    from {
+        background: rgba(0, 0, 0, .05);
+    }
+
+    to {
+        background: transparent;
+    }
+}
+
+.popup {
+    position: absolute;
+    top: 1vw;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+    padding: .4vw 2vw;
+    border-radius: 2vw;
+    animation: wait-popup .5s infinite alternate;
+}
+
+.spin {
+    margin: .3vw;
+    animation: wait-spin 1s infinite;
+}
+
+.value {
+    font-size: 1vw;
+    user-select: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .popup {
+        top: 2vw;
+        padding: 1.5vw 4vw;
+    }
+
+    .spin {
+        width: 12px;
+    }
+
+    .value {
+        font-size: 2vw;
+    }
+}
