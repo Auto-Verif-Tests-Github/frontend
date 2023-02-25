@@ -5,6 +5,7 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import CoursesPage from "./pages/CoursesPage";
 import StreamsPage from "./pages/StreamsPage";
+import CourseViewPage from "./pages/CourseViewPage";
 
 function App() {
     return (
@@ -15,7 +16,10 @@ function App() {
                         <Route path="" element={<HomePage />} />
                         <Route path="login" element={<LoginPage />} />
                         <Route path="streams" element={<StreamsPage />} />
-                        <Route path="courses/:stream_id" element={<CoursesPage />} />
+                        <Route path="stream/:stream_id/">
+                            <Route path="courses" element={<CoursesPage />} />
+                            <Route path="course/:course_id" element={<CourseViewPage />} />
+                        </Route>
                         <Route path="*" element={<Navigate to="/" replace />} />
                     </Route>
                 </Routes>
