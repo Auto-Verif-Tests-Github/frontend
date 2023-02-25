@@ -5,4 +5,12 @@
     height: 5svw;
     width: 100vw;
     background: white;
+    font-size: 1.2vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .banner {
+        height: 8svw;
+        font-size: 2vw;
+    }
 }

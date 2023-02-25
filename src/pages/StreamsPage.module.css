@@ -5,3 +5,9 @@
 .streams {
     margin: 5.5svw 1vw 0 1vw;
 }
+
+@media screen and (max-width: 1000px) {
+    .streams {
+        margin: 10.5svw 1vw 0 1vw;
+    }
+}
