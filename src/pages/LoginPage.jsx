@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import cs from "./LoginPage.module.css";
 import Logo from "../UI/components/logo/Logo";
 import next from "../images/next_icon.png";
@@ -6,9 +6,18 @@ import {useNavigate} from "react-router-dom";
 
 const LoginPage = () => {
     const navigate = useNavigate();
+    const pass = useRef();
 
     function btnClick() {
         navigate("/streams");
+    }
+
+    function focus() {
+        pass.current.type = "text";
+    }
+
+    function blur() {
+        pass.current.type = "password";
     }
 
     return (
@@ -17,7 +26,7 @@ const LoginPage = () => {
             <div className={cs.form}>
                 <input placeholder="login" type="text" />
                 <div className={cs.line}></div>
-                <input placeholder="password" type="password" />
+                <input onFocus={focus} onBlur={blur} ref={pass} placeholder="password" type="password" />
                 <div className={cs.next_btn} onClick={btnClick}><img src={next} alt="" /></div>
             </div>
         </div>
