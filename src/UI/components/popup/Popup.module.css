@@ -1,0 +1,13 @@
+.popup {
+    background: #dedede;
+    position: absolute;
+    font-size: .8vw;
+    border-radius: .4vw;
+    padding: .5vw 1vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .popup {
+        font-size: 1.5vw;
+    }
+}
