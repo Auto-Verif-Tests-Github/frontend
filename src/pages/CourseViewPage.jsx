@@ -4,7 +4,7 @@ import CourseTable from "../UI/components/table/CourseTable";
 import LineTable from "../UI/components/table/LineTable";
 import {getAllPeopleByStreamId} from "../api/requests/people";
 import {getAllTasksByCourseIdAndStreamId} from "../api/requests/tasks";
-import {getAllSolutionsByTaskId} from "../api/requests/solutions";
+import {getAllSolutionsByCourseId} from "../api/requests/solutions";
 import ModalWait from "../UI/components/wait/ModalWait";
 import List from "../UI/components/list/List";
 
@@ -16,6 +16,13 @@ const CourseViewPage = () => {
     const [loadText, setLoadText] = useState("Секундочку, генерируем потоки");
     useEffect(loadCourse, []);
 
+    function getSolutionsByPeople(peopleId, solutions) {
+        for(let i = 0; i < solutions.length; i++) {
+            if(solutions[i][peopleId + ""] !== undefined) return solutions[i][peopleId + ""];
+        }
+        return []
+    }
+
     function loadCourse() {
         getAllPeopleByStreamId(
             stream_id,
@@ -26,21 +33,27 @@ const CourseViewPage = () => {
                     course_id, stream_id, undefined,
                     (data) => {
                         const tasks = data.items;
-                        const solutions = []
+                        getAllSolutionsByCourseId(
+                            course_id, undefined,
+                            (data) => {
+                                const solutions = data.items
 
-                        for(let k = 0; k < tasks.length; k++) {
-                            getAllSolutionsByTaskId(
-                                tasks[k].id, undefined,
-                                (data) => undefined,
-                                undefined, undefined
-                            );
-                        }
-
-                        setTable(() => <CourseTable
-                            courseName={name}
-                            tasks={tasks.map((e, i) => JSON.parse(`{"id": ${e.id}, "id_position": ${i}, "date": "${e.start_date}", "deadline_date": "${e.deadline_date}", "name": "${e.name}"}`))}
-                            tableInfo={undefined}
-                        />);
+                                setTable(() => <CourseTable
+                                    courseName={name}
+                                    tasks={tasks.map((e, i) => JSON.parse(`{"id": ${e.id}, "id_position": ${i}, "date": "${e.start_date}", "deadline_date": "${e.deadline_date}", "name": "${e.name}"}`))}
+                                    tableInfo={people.map((e, i) => {
+                                        const answers = getSolutionsByPeople(e.id, solutions);
+                                        console.log(answers);
+                                        console.log(solutions);
+                                        return <LineTable key={e.id} personName={e.name} solutions={answers.map((el, ii) => {
+                                            console.log(el[0].task_id);
+                                            return JSON.parse(`{"task_id": ${el.task_id}, "status": "${el.status}", "task_position_id": ${ii}}`)
+                                        })} />
+                                    })}
+                                />);
+                            },
+                            undefined, undefined
+                        );
                     },
                     undefined, undefined
                 )
